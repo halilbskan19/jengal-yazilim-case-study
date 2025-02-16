@@ -1,35 +1,39 @@
 :root {
-    --primary: #1E90FF;
-    --text: #FFFFFF;
-    --dark: #000000;
-    --success: #28A745;
+    --primary: #A8D8EA;
+    --text: #4A4A4A;
+    --dark: #2C3E50;
+    --success: #B8E986;
+    --link: #6A5ACD;
     --card-border-radius: 8px;
     --card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .theme-brandA {
-    --primary: #1E90FF;
-    --text: #FFFFFF;
-    --dark: #000000;
-    --success: #28A745;
+    --primary: #A8D8EA;
+    --text: #4A4A4A;
+    --dark: #2C3E50;
+    --success: #B8E986;
+    --link: #6A5ACD;
     --card-border-radius: 8px;
     --card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .theme-brandB {
-    --primary: #8B0000;
-    --text: #FFD700;
-    --dark: #000000;
-    --success: #228B22;
+    --primary: #FFB6C1;
+    --text: #333333;
+    --dark: #8B475D;
+    --success: #C1E1C1;
+    --link: #BA55D3;
     --card-border-radius: 24px;
     --card-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.7);
 }
 
 .theme-brandC {
-    --primary: #FF8C00;
-    --text: #222222;
-    --dark: #000000;
-    --success: #006400;
+    --primary: #FFFACD;
+    --text: #555555;
+    --dark: #8B7500;
+    --success: #98FB98;
+    --link: #87CEEB;
     --card-border-radius: 0;
     --card-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }

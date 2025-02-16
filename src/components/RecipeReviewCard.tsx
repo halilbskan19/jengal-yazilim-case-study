@@ -2,10 +2,8 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Cancel, ShoppingBasket } from "@mui/icons-material";
 import { Product } from "@/interfaces/product";
@@ -13,7 +11,7 @@ import { CartHandler, FavoriteHandler } from "@/interfaces/card-handler";
 
 interface RecipeReviewCardProps extends FavoriteHandler, CartHandler {
   data: Product;
-  isFavorited?: boolean; 
+  isFavorited?: boolean;
 }
 
 const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
@@ -24,26 +22,25 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
   isFavorited,
 }) => {
   return (
-    <Card className="flex flex-col gap-4 !rounded-card !shadow-card">
-      <div className="flex flex-col items-stretch">
-        <div className="grid grid-cols-[auto_1fr] gap-2 p-3">
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-          <div className="grid">
-            <h2 className="line-clamp-3">{data.title}</h2>
-            <Typography>{data.category}</Typography>
+    <Card className="flex flex-col gap-8 !rounded-card !shadow-card">
+      <div className="flex flex-col items-stretch gap-8 h-full">
+        <div className="grid gap-2 p-3 min-h-[96]">
+          <div className="grid gap-2">
+            <h2 className="line-clamp-2 text-md">{data.title}</h2>
+            <Typography className="flex items-end text-xs capitalize">{data.category}</Typography>
           </div>
         </div>
-        <CardMedia
-          component="img"
-          height="194"
-          image={data.image}
-          alt={data.title}
-          className="!w-fit max-h-[190] ml-auto mr-auto px-3"
-        />
+        <div className="grid h-full items-center">
+          <CardMedia
+            component="img"
+            height="194"
+            image={data.image}
+            alt={data.title}
+            className="!w-fit max-h-[230] ml-auto mr-auto px-3"
+          />
+        </div>
       </div>
-      <div className="h-full grid content-end">
+      <div className="grid content-end">
         <div className="flex justify-between items-center pr-4 pl-1">
           <div className="flex">
             {onAddToFavorites && (
@@ -69,10 +66,10 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
               </IconButton>
             )}
           </div>
-          <span className="font-bold text-xl text-primary">${data.price}</span>
+          <span className="font-bold text-xl text-link">${data.price}</span>
         </div>
         <CardContent>
-          <Typography className="capitalize line-clamp-4">{data.description}</Typography>
+          <Typography className="capitalize line-clamp-3 text-sm">{data.description}</Typography>
         </CardContent>
       </div>
     </Card>

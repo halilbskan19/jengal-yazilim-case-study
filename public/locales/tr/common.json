@@ -1,12 +1,17 @@
 {
-    "store": "Mağaza",
-    "favorites": "Favoriler",
-    "favorites_empty": "Favori listeniz boş.",
-    "cart": "Sepet",
-    "my_cart": "Sepetim",
-    "empty_cart": "Sepetiniz boş.",
-    "total_price": "Toplam Fiyat",
-    "loading": "Yükleniyor...",
-    "product_list": "Ürün Listesi"
-  }
-  
+  "store": "Mağaza",
+  "favorites": "Favoriler",
+  "favorites_empty": "Favori listeniz boş.",
+  "cart": "Sepet",
+  "my_cart": "Sepetim",
+  "empty_cart": "Sepetiniz boş.",
+  "total_price": "Toplam Fiyat",
+  "loading": "Yükleniyor...",
+  "product_list": "Ürün Listesi",
+  "home_title": "Ana Sayfa - Ürün Listesi",
+  "home_description": "En iyi ürünleri keşfet ve satın al.",
+  "cart_title": "Sepetiniz - Jengal Yazılım Case Study",
+  "cart_description": "Sepetinizdeki ürünleri inceleyin ve alışverişinizi tamamlayın.",
+  "favorites_title": "Favorilerim - Jengal Yazılım Case Study",
+  "favorites_description": "Favori ürünlerinizi burada bulabilirsiniz."
+}

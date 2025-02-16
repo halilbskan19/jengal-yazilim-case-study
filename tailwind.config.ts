@@ -11,7 +11,8 @@ const config: Config = {
       primary: "var(--primary)", 
       text: "var(--text)",     
       dark: "var(--dark)", 
-      success: "var(--success)"
+      success: "var(--success)",
+      link: "var(--link)"
     },
     borderRadius: {
       card: "var(--card-border-radius)",

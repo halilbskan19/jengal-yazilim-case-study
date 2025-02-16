@@ -1,12 +1,17 @@
 {
-    "store": "Store",
-    "favorites": "Favorites",
-    "favorites_empty": "Your favorites is empty.",
-    "cart": "Cart",
-    "my_cart": "My Cart",
-    "empty_cart": "Your cart is empty.",
-    "total_price": "Total Price",
-    "loading": "Loading...",
-    "product_list": "Product List"
-  }
-  
+  "store": "Store",
+  "favorites": "Favorites",
+  "favorites_empty": "Your favorites is empty.",
+  "cart": "Cart",
+  "my_cart": "My Cart",
+  "empty_cart": "Your cart is empty.",
+  "total_price": "Total Price",
+  "loading": "Loading...",
+  "product_list": "Product List",
+  "home_title": "Home - Product List",
+  "home_description": "Discover and buy the best products.",
+  "cart_title": "Your Cart - Jengal Yazılım Case Study",
+  "cart_description": "View the products in your cart and complete your shopping.",
+  "favorites_title": "My Favorites - Jengal Yazılım Case Study",
+  "favorites_description": "You can find your favorite products here."
+}
