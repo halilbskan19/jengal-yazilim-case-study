@@ -1,44 +1,28 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Cancel, ShoppingBasket } from '@mui/icons-material';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Cancel, ShoppingBasket } from "@mui/icons-material";
+import { Product } from "@/interfaces/product";
+import { CartHandler, FavoriteHandler } from "@/interfaces/card-handler";
 
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  quantity: number;
-}
-
-interface FavoriteItem {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  quantity: number;
-}
-
-interface RecipeReviewCardProps {
+interface RecipeReviewCardProps extends FavoriteHandler, CartHandler {
   data: Product;
-  onAddToFavorites?: (product: Product) => void;
-  onAddToCart?: (product: Product) => void;
-  onRemoveFromFavorites?: (id: FavoriteItem) => void;
+  isFavorited?: boolean; 
 }
 
-const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({ data, onAddToFavorites, onAddToCart, onRemoveFromFavorites }) => {
-
+const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
+  data,
+  onAddToFavorites,
+  onAddToCart,
+  onRemoveFromFavorites,
+  isFavorited,
+}) => {
   return (
     <Card className="flex flex-col gap-4 !rounded-card !shadow-card">
       <div className="flex flex-col items-stretch">
@@ -55,7 +39,7 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({ data, onAddToFavori
           component="img"
           height="194"
           image={data.image}
-          alt="Paella dish"
+          alt={data.title}
           className="!w-fit max-h-[190] ml-auto mr-auto px-3"
         />
       </div>
@@ -63,32 +47,36 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({ data, onAddToFavori
         <div className="flex justify-between items-center pr-4 pl-1">
           <div className="flex">
             {onAddToFavorites && (
-              <IconButton aria-label="add to favorites" onClick={() => onAddToFavorites(data)}>
+              <IconButton
+                aria-label="add to favorites"
+                onClick={() => onAddToFavorites(data)}
+                color={isFavorited ? "error" : "default"}
+              >
                 <FavoriteIcon />
               </IconButton>
             )}
             {onAddToCart && (
-              <IconButton aria-label="share" onClick={() => onAddToCart(data)}>
+              <IconButton aria-label="add to cart" onClick={() => onAddToCart(data)}>
                 <ShoppingBasket />
               </IconButton>
             )}
             {onRemoveFromFavorites && (
-              <IconButton aria-label="remove" onClick={() => onRemoveFromFavorites(data)}>
+              <IconButton
+                aria-label="remove from favorites"
+                onClick={() => onRemoveFromFavorites(data)}
+              >
                 <Cancel />
               </IconButton>
             )}
           </div>
-          <span className="font-bold text-xl text-primary">{'$' + data.price}</span>
+          <span className="font-bold text-xl text-primary">${data.price}</span>
         </div>
         <CardContent>
-          <Typography className="capitalize line-clamp-4">
-            {data.description}
-          </Typography>
+          <Typography className="capitalize line-clamp-4">{data.description}</Typography>
         </CardContent>
       </div>
     </Card>
   );
-}
-
+};
 
 export default RecipeReviewCard;

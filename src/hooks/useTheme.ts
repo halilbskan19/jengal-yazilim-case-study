@@ -8,7 +8,6 @@ const THEMES = {
   brandC: process.env.NEXT_PUBLIC_BRANDC || "brandC",
 };
 
-// Varsayılan temayı belirle
 const DEFAULT_THEME = process.env.NEXT_PUBLIC_DEFAULT_THEME || THEMES.brandA;
 
 export function useTheme() {

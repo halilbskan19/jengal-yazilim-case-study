@@ -1,18 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface FavoriteItem {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  quantity: number;
-}
-
-interface FavoritesState {
-  items: FavoriteItem[];
-}
+import { FavoriteItem, FavoritesState } from "@/interfaces/favorites";
 
 const initialState: FavoritesState = {
   items: [],

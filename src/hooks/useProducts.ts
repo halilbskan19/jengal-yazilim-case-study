@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  quantity: number;
-}
+import { Product } from "@/interfaces/product";
 
 export const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
