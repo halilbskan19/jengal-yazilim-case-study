@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
-import { removeFromCart } from "@/store/slices/cartSlice";
+import { removeFromCart, setCartFromLocalStorage } from "@/store/slices/cartSlice";
 import { useTranslation } from "next-i18next";
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -11,6 +12,15 @@ export default function CartPage() {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state: RootState) => state.cart);
   const { t } = useTranslation("common");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedCart = localStorage.getItem("cart");
+      if (savedCart) {
+        dispatch(setCartFromLocalStorage(JSON.parse(savedCart)));
+      }
+    }
+  }, [dispatch]);
 
   return (
     <>

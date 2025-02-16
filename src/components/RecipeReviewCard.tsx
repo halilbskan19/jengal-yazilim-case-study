@@ -11,7 +11,6 @@ import { CartHandler, FavoriteHandler } from "@/interfaces/card-handler";
 
 interface RecipeReviewCardProps extends FavoriteHandler, CartHandler {
   data: Product;
-  isFavorited?: boolean;
 }
 
 const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
@@ -19,8 +18,17 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
   onAddToFavorites,
   onAddToCart,
   onRemoveFromFavorites,
-  isFavorited,
 }) => {
+  const [isFavorited, setIsFavorited] = React.useState(false);
+
+  React.useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      const favorites = JSON.parse(storedFavorites);
+      setIsFavorited(favorites.some((item: Product) => item.id === data.id));
+    }
+  }, [data.id]);
+
   return (
     <Card className="flex flex-col gap-8 !rounded-card !shadow-card">
       <div className="flex flex-col items-stretch gap-8 h-full">
@@ -46,7 +54,10 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
             {onAddToFavorites && (
               <IconButton
                 aria-label="add to favorites"
-                onClick={() => onAddToFavorites(data)}
+                onClick={() => {
+                  onAddToFavorites(data);
+                  setIsFavorited(true);
+                }}
                 color={isFavorited ? "error" : "default"}
               >
                 <FavoriteIcon />
@@ -60,7 +71,10 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
             {onRemoveFromFavorites && (
               <IconButton
                 aria-label="remove from favorites"
-                onClick={() => onRemoveFromFavorites(data)}
+                onClick={() => {
+                  onRemoveFromFavorites(data);
+                  setIsFavorited(false);
+                }}
               >
                 <Cancel />
               </IconButton>
@@ -75,5 +89,6 @@ const RecipeReviewCard: React.FC<RecipeReviewCardProps> = ({
     </Card>
   );
 };
+
 
 export default RecipeReviewCard;

@@ -5,7 +5,7 @@ import { Cancel } from "@mui/icons-material";
 
 interface CartItemProps {
     item: CartItemType;
-    onRemove: (id: number) => void;
+    onRemove: () => void;
 }
 
 export default function CartItem({ item, onRemove }: CartItemProps) {
@@ -16,10 +16,7 @@ export default function CartItem({ item, onRemove }: CartItemProps) {
                 <h2 className="text-lg font-semibold">{item.title}</h2>
                 <p className="text-gray-500">${item.price} x {item.quantity}</p>
             </div>
-            <IconButton
-                aria-label="remove from favorites"
-                onClick={() => onRemove(item.id)}
-            >
+            <IconButton aria-label="remove from cart" onClick={onRemove}>
                 <Cancel />
             </IconButton>
         </div>
