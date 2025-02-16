@@ -1,0 +1,35 @@
+:root {
+    --primary: #1E90FF;
+    --text: #FFFFFF;
+    --dark: #000000;
+    --success: #28A745;
+    --card-border-radius: 8px;
+    --card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-brandA {
+    --primary: #1E90FF;
+    --text: #FFFFFF;
+    --dark: #000000;
+    --success: #28A745;
+    --card-border-radius: 8px;
+    --card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-brandB {
+    --primary: #8B0000;
+    --text: #FFD700;
+    --dark: #000000;
+    --success: #228B22;
+    --card-border-radius: 24px;
+    --card-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.7);
+}
+
+.theme-brandC {
+    --primary: #FF8C00;
+    --text: #222222;
+    --dark: #000000;
+    --success: #006400;
+    --card-border-radius: 0;
+    --card-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}

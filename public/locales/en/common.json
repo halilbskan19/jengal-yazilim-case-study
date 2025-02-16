@@ -1,0 +1,12 @@
+{
+    "store": "Store",
+    "favorites": "Favorites",
+    "favorites_empty": "Your favorites is empty.",
+    "cart": "Cart",
+    "my_cart": "My Cart",
+    "empty_cart": "Your cart is empty.",
+    "total_price": "Total Price",
+    "loading": "Loading...",
+    "product_list": "Product List"
+  }
+  
